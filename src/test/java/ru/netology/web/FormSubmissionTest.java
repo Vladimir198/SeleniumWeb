@@ -18,7 +18,7 @@ public class FormSubmissionTest {
     // должен быть выполнен перед всеми тестами в текущем тестовом классе.
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./driver/ci92/chromedriver");
     }
 
     // используется для обозначения того, что
