@@ -55,4 +55,16 @@ public class FormSubmissionTest {
                 "Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 
+    @Test
+    void shouldNegativeFamily() {
+        driver.get("http://localhost:9999");
+        driver.findElement(By.className("input__control")).sendKeys("Pavel Petrov");
+        driver.findElement(By.name("phone")).sendKeys("+79270000000");
+        driver.findElement(By.className("checkbox")).click();
+        driver.findElement(By.className("button")).click();
+        String text = driver.findElement(By.className("input__sub")).getText();
+        assertEquals("Имя и Фамилия указаные неверно. Допустимы только " +
+                "русские буквы, пробелы и дефисы.", text.trim());
+    }
+
 }
