@@ -1,5 +1,6 @@
 package ru.netology.web;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,8 +18,9 @@ public class FormSubmissionTest {
     // используется, чтобы сигнализировать, что аннотированный метод 
     // должен быть выполнен перед всеми тестами в текущем тестовом классе.
     @BeforeAll
-    static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "./driver/ci92/chromedriver");
+    static void setUpAll()  {
+        WebDriverManager.chromedriver().setup();
+       // System.setProperty("webdriver.chrome.driver", "./driver/chromedriver");
     }
 
     // используется для обозначения того, что
@@ -43,6 +45,7 @@ public class FormSubmissionTest {
         driver.quit();
         driver = null;
     }
+
     @Test
     void shouldTestV1() {
         driver.get("http://localhost:9999");
