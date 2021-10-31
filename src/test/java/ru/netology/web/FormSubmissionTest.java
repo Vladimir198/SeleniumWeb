@@ -54,7 +54,7 @@ public class FormSubmissionTest {
         driver.findElement(By.className("checkbox")).click();
         driver.findElement(By.className("button")).click();
         String text = driver.findElement(By.tagName("p")).getText();
-        assertEquals("Ваша заявка успешно отправлена " +
+        assertEquals("Ваша заявка успешно отправлена! " +
                 "Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 
